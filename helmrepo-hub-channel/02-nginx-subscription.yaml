@@ -10,6 +10,6 @@ spec:
   placement:
     placementRef:
       kind: PlacementRule
-      name: nginx-pr
+      name: mcm-pak-pr
   packageFilter:
     version: "1.36.3"
