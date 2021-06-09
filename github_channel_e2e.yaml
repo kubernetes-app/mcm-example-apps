@@ -8,20 +8,20 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: ch-git
----
-apiVersion: app.k8s.io/v1beta1
-kind: Application
-metadata:
-  name: git-sub-app
-  namespace: git-sub-ns
-spec:
-  componentKinds:
-    - group: apps.open-cluster-management.io
-      kind: Subscription
-  descriptor: {}
-  selector:
-    matchLabels:
-      name: git-sub
+# ---
+# apiVersion: app.k8s.io/v1beta1
+# kind: Application
+# metadata:
+#   name: git-sub-app
+#   namespace: git-sub-ns
+# spec:
+#   componentKinds:
+#     - group: apps.open-cluster-management.io
+#       kind: Subscription
+#   descriptor: {}
+#   selector:
+#     matchLabels:
+#       name: git-sub
 ---
 apiVersion: apps.open-cluster-management.io/v1
 kind: Channel
