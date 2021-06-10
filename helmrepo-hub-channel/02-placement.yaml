@@ -3,7 +3,7 @@ kind: PlacementRule
 metadata:
   name: mcm-pak-pr
 spec:
-  clusterReplicas: 1
+  clusterReplicas: 3
   clusterSelector:
     matchLabels:
       environment: Dev

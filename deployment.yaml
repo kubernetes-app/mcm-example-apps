@@ -1,0 +1,47 @@
+--- 
+apiVersion: apps.open-cluster-management.io/v1
+kind: Deployable
+metadata: 
+  name: nginx-deployable
+  labels:
+    name: nginx-deployable
+  annotations: 
+    apps.open-cluster-management.io/is-local-deployable: "false"
+  namespace: default
+spec: 
+  placement:
+    placementRef:
+      kind: PlacementRule
+      name: dev-pr
+  template: 
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: nginx-deployment
+    spec:
+      selector:
+        matchLabels:
+          app: nginx
+      replicas: 2
+      template:
+        metadata:
+          labels:
+            app: nginx
+        spec:
+          containers:
+          - name: nginx
+            image: nginx
+            ports:
+            - containerPort: 80
+
+---
+apiVersion: apps.open-cluster-management.io/v1
+kind: PlacementRule
+metadata:
+  name: dev-pr
+spec:
+  clusterReplicas: 3
+  clusterSelector:
+    matchLabels:
+      environment: Dev
+
