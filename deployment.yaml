@@ -3,11 +3,11 @@ apiVersion: apps.open-cluster-management.io/v1
 kind: Deployable
 metadata: 
   name: nginx-deployable
+  namespace: default
   labels:
     name: nginx-deployable
   annotations: 
     apps.open-cluster-management.io/is-local-deployable: "false"
-  namespace: default
 spec: 
   placement:
     placementRef:
@@ -39,6 +39,7 @@ apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
   name: dev-pr
+  namespace: default
 spec:
   clusterReplicas: 3
   clusterSelector:
