@@ -1,7 +1,7 @@
-apiVersion: v1                      
+apiVersion: v1
 kind: Namespace
 metadata:
-  name: nginx-objstore-ns                             
+  name: nginx-objstore-ns
 ---
 apiVersion: app.k8s.io/v1beta1
 kind: Application
@@ -20,7 +20,7 @@ spec:
         values: 
           - nginx-objstore
 ---
-apiVersion: v1                      
+apiVersion: v1
 kind: Namespace
 metadata:
   name: nginx-objstore-chn-ns

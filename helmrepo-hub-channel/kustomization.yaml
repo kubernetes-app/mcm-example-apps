@@ -3,5 +3,5 @@ resources:
 # - 01-application.yaml
 - 01-channel.yaml
 - 02-placement.yaml
-- 02-mysql-subscription.yaml
+# - 02-mysql-subscription.yaml
 - 02-nginx-subscription.yaml
